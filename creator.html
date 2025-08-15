@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creator | DDD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide-static@latest/dist/lucide.min.js"></script>
+</head>
+<body style="padding: 0; overflow: hidden;">
+    <main class="creator-layout">
+        <div class="creator-panel">
+            <div class="tool-group">
+                <h3>Neural Canvas</h3>
+                <p style="font-size: 0.9rem;">Start with a text prompt.</p>
+                <input type="text" id="text-input" placeholder="A sculptural vase..." style="width: 100%; border-radius: 8px; border: 1px solid var(--border-color); padding: 8px; margin-top: 10px;">
+                <button id="text-button" class="btn" style="width: 100%; margin-top: 10px;"><span>Generate</span></button>
+            </div>
+            <div class="tool-group">
+                <h3>Add Shape</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <button id="add-sphere" class="btn" style="padding: 10px;"><span><i data-lucide="circle"></i></span></button>
+                    <button id="add-cube" class="btn" style="padding: 10px;"><span><i data-lucide="square"></i></span></button>
+                    <button id="add-torus" class="btn" style="padding: 10px;"><span><i data-lucide="circle-dot"></i></span></button>
+                </div>
+            </div>
+        </div>
+        <div class="viewport-container">
+            <canvas id="gravity-grid-canvas"></canvas>
+            <canvas id="creator-canvas"></canvas>
+        </div>
+        <div class="creator-panel">
+            <h3>Mod-Stack</h3>
+            <div id="mod-stack-list" class="tool-group" style="flex-grow: 1; overflow-y: auto;"></div>
+        </div>
+    </main>
+    <script> lucide.createIcons(); </script>
+    <script type="module" src="/src/creator.js"></script>
+</body>
+</html>

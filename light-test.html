@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor Light Test (New Method)</title>
+    <style>
+        /*
+          NEW METHOD:
+          1. The body has the solid background color.
+          2. The page content is wrapped in a ".page-content" div with a z-index of 2.
+          3. The cursor light has a z-index of 1, placing it *between* the background and the content.
+          This is the most reliable way to create this effect.
+        */
+        body {
+            background-color: #F9F9F9;
+            font-family: sans-serif;
+            color: #2A2A3A;
+            margin: 0;
+        }
+
+        .page-content {
+            position: relative; /* Required for z-index to work */
+            z-index: 2;
+            padding: 40px;
+        }
+
+        #cursor-light {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(190, 190, 210, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1; /* Sits on top of the body background, but below the content */
+            will-change: transform;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="cursor-light"></div>
+
+    <div class="page-content">
+        <h1>This is a test page.</h1>
+        <p>Move your mouse around. A soft light should follow your cursor.</p>
+        <p>This version uses a more reliable method to ensure the light is visible.</p>
+    </div>
+
+    <script>
+        const light = document.getElementById('cursor-light');
+        if (light) {
+            window.addEventListener('mousemove', (e) => {
+                light.style.left = `${e.clientX}px`;
+                light.style.top = `${e.clientY}px`;
+            });
+        }
+    </script>
+
+</body>
+</html>

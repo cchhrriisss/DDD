@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "dev": "vite --host",
-  "build": "vite build",
-  "preview": "vite preview"
-}
-,
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "vite": "^7.1.2"
+  },
+  "dependencies": {
+    "three": "^0.179.1"
   }
 }

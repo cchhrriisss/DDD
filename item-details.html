@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Vase #03 - Forma</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide-static@latest/dist/lucide.min.js"></script>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Forma</a>
+            <nav class="nav-links">
+                <a href="creator.html">Creator</a>
+                <a href="market.html" class="active">Gallery</a>
+                <a href="pricing.html">Plans</a>
+            </nav>
+            <a href="creator.html" class="btn">Start Creating</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <div class="item-detail-layout">
+                <div class="item-viewer">
+                    <canvas id="item-canvas"></canvas>
+                </div>
+                <div class="item-info-panel">
+                    <h1>Organic Vase #03</h1>
+                    <p style="margin-bottom: 30px;">By <a href="#">Anna Weber</a></p>
+                    <p>A beautifully sculpted vase with natural, flowing lines. Perfect for adding a touch of elegance to any interior scene. Print-ready and fully editable.</p>
+                    
+                    <div class="tool-group" style="margin-top: 40px;">
+                        <h3><i data-lucide="edit"></i> Make it Yours</h3>
+                        <label for="personalize-text" style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 10px; display: block;">Add custom text:</label>
+                        <input type="text" id="personalize-text" placeholder="e.g., 'For Mom'" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 10px;">
+                        <button id="personalize-apply" class="btn" style="width: 100%;">Apply Text</button>
+                    </div>
+
+                    <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 15px;">
+                        <a href="#" class="btn btn-primary" style="width:100%; background: var(--accent-primary);">Download</a>
+                        <a href="#" class="btn" style="width:100%; background: var(--background-secondary); color: var(--text-primary); border: 1px solid var(--border-color);">Open in Creator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Community</a>
+                <a href="#">Learn</a>
+                <a href="#">Support</a>
+            </div>
+            <p class="footer-copy">© 2025 Forma. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+    <script type="module" src="/src/item-details.js"></script>
+</body>
+</html>

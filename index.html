@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DDD Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDD | The Fluid 3D Workspace</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello from /DDD</h1>
-  <script type="module" src="/src/main.js"></script>
+<div id="cursor-light"></div>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">DDD</a>
+            <nav class="nav-links">
+                <a href="creator.html">Creator</a>
+                <a href="market.html">Gallery</a>
+                <a href="printing.html">Printing</a>
+                <a href="pricing.html">Pricing</a>
+            </nav>
+            <a href="creator.html" class="btn primary"><span>Start Creating</span></a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 60px;">
+                    <h1 style="font-size: clamp(3.5rem, 10vw, 7rem); line-height: 1.0;">The Fluid 3D Workspace.</h1>
+                    <p style="font-size: 1.25rem; margin-top: 30px;">DDD is an intuitive design tool that thinks with you. Create, collaborate, and bring your ideas to life with a workflow that feels like magic.</p>
+                    <a href="creator.html" class="btn primary" style="margin-top: 40px;"><span>Start For Free</span></a>
+                </div>
+                <div class="visual-container">
+                    <canvas id="hero-canvas"></canvas>
+                </div>
+            </div>
+        </section>
+        <section class="section" style="background-color: #fff;">
+            <div class="container grid-2">
+                <div>
+                    <h2>Converse with the Neural Canvas.</h2>
+                    <p>Go beyond simple prompts. Start with an idea, then have a conversation with your model. Select an area and suggest a change—"make this part smoother," or "add a floral pattern here." The AI collaborates with you in real-time.</p>
+                </div>
+                <div class="visual-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>
