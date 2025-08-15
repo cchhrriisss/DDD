@@ -253,3 +253,65 @@ body.mobile-nav-open .mobile-nav {
     display: none;
 }
 }
+/* === FINAL RESPONSIVE & MOBILE STYLES === */
+
+.creator-mobile-ui {
+    display: none; /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+    /* --- General Mobile Adjustments --- */
+    body {
+        padding-top: 80px; /* Adjust for a slightly smaller navbar on mobile */
+    }
+    .navbar {
+        height: 80px;
+    }
+    .section {
+        padding: 80px 20px;
+    }
+
+    /* --- Make Creator Responsive --- */
+    .creator-layout {
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+    }
+    
+    /* Hide the desktop panels by default */
+    .creator-panel {
+        display: none;
+    }
+
+    /* Style the slide-up panels for mobile */
+    .mobile-panel {
+        display: flex; /* This overrides the 'display: none' above */
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        max-height: 60vh; /* Panel will not cover more than 60% of the screen */
+        z-index: 2000;
+        transform: translateY(100%); /* Start hidden at the bottom */
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        border-radius: 20px 20px 0 0;
+        padding-top: 40px; /* Add space for a grab handle */
+    }
+
+    /* This class will be toggled by JavaScript to show the panel */
+    .mobile-panel.is-open {
+        transform: translateY(0);
+    }
+    
+    /* Show and style the mobile toggle buttons */
+    .creator-mobile-ui {
+        display: flex;
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 10px;
+        z-index: 50;
+    }
+}
