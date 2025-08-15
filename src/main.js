@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             light.style.left = `${e.clientX}px`;
             light.style.top = `${e.clientY}px`;
         });
+            const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', () => {
+            document.body.classList.toggle('mobile-nav-open');
+        });
+    }
     }
 
     // --- GIMMICK 2: MAGNETIC BUTTONS ---

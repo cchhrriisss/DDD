@@ -173,3 +173,24 @@ drawGravityGrid() {
 }
 }
 new CreatorApp();
+// --- NEW: MOBILE CREATOR UI LOGIC ---
+document.addEventListener('DOMContentLoaded', () => {
+    const toolsToggle = document.getElementById('tools-toggle');
+    const modStackToggle = document.getElementById('mod-stack-toggle');
+    const panels = document.querySelectorAll('.creator-panel');
+    const leftPanel = panels[0];
+    const rightPanel = panels[1];
+
+    if (toolsToggle) {
+        toolsToggle.addEventListener('click', () => {
+            leftPanel.classList.toggle('is-open');
+            rightPanel.classList.remove('is-open'); // Close other panel
+        });
+    }
+    if (modStackToggle) {
+        modStackToggle.addEventListener('click', () => {
+            rightPanel.classList.toggle('is-open');
+            leftPanel.classList.remove('is-open'); // Close other panel
+        });
+    }
+});
